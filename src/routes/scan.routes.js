@@ -9,4 +9,7 @@ router.route("/scan").post(
     Scan
 );
 
+router.route("/data").get(Data);
+
 export default router;
+
