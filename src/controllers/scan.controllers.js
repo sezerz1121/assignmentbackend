@@ -45,5 +45,16 @@ const Scan = asyncHandler(async (req, res) => {
     }
 });
 
-export { Scan };
+// Data controller to retrieve all history records
+const Data = asyncHandler(async (req, res) => {
+    try {
+        const data = await History.find();
+        res.status(200).json(data);
+    } catch (error) {
+        throw new ApiError(500, error.message || "Internal Server Error");
+    }
+});
+
+export { Scan, Data };
+
 
